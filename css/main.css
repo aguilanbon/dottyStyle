@@ -27,11 +27,22 @@ a {
   background-color: #333333;
   height: 3em;
   position: fixed;
-  z-index: 999;
+  z-index: 20;
 }
 
 nav {
   display: none;
+}
+
+.overlay {
+  display: none;
+  z-index: 15;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e6e3e3;
+  opacity: 20%;
+  cursor: pointer;
 }
 
 .navbar-toggle {
@@ -39,12 +50,12 @@ nav {
   background-color: #333333;
   position: fixed;
   z-index: 999;
-  width: 50%;
+  width: 40%;
   top: 0;
   right: 0;
   height: 100vh;
   text-align: right;
-  font-size: .8em;
+  font-size: .7em;
 }
 
 .navbar-toggle ul {
@@ -59,6 +70,10 @@ nav {
   color: #fafafa;
 }
 
+.navbar-toggle li a:hover {
+  color: wheat;
+}
+
 #menu-cta {
   height: 24px;
   width: 24px;
@@ -69,10 +84,10 @@ nav {
 }
 
 #exit-cta {
-  height: 24px;
-  width: 24px;
+  height: 16px;
+  width: 16px;
   float: right;
-  margin-right: 10px;
+  margin: .5em 1em;
   cursor: pointer;
   padding: .5em;
   border-radius: 50%;
@@ -152,13 +167,13 @@ nav {
 }
 
 .hero-section .container #hero-img {
-  margin-top: 20em;
+  margin-top: 5em;
   cursor: pointer;
 }
 
 .hero-section .container #yt-video {
   display: none;
-  margin: 15em auto;
+  margin: 5em auto;
 }
 
 .background-section {
@@ -381,8 +396,7 @@ nav {
   position: fixed;
   right: 0;
   bottom: 50%;
-  z-index: 999;
-  margin-right: 1em;
+  z-index: 10;
 }
 
 #ellipse-container .el-btn-container {
@@ -526,6 +540,14 @@ nav {
         -ms-flex-align: start;
             align-items: flex-start;
     cursor: pointer;
+  }
+  .hero-section .container .hero-image #hero-img {
+    margin-top: 20em;
+    cursor: pointer;
+  }
+  .hero-section .container .hero-image #yt-video {
+    display: none;
+    margin: 15em auto;
   }
   .background-section .container {
     max-width: 60%;

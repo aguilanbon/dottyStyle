@@ -1,5 +1,6 @@
 const pgSection = document.querySelectorAll('section');
 const navLi = document.querySelectorAll('nav ul li');
+const overLay = document.querySelector('.overlay');
 
 const menuCta = document.getElementById('menu-cta');
 const exitCta = document.getElementById('exit-cta');
@@ -31,6 +32,11 @@ const sideBtns = document.querySelectorAll('#ellipse-container .el-btn-container
 // 2253
 
 // states
+
+nav.addEventListener('focusout', () => {
+	nav.classList.remove('navbar-toggle');
+	overLay.style.display = 'none';
+});
 
 for (let i = 0; i < btns.length; i++) {
 	btns[i].addEventListener('click', function() {
@@ -132,6 +138,7 @@ btns[3].addEventListener('click', () => {
 window.addEventListener('resize', () => {
 	if (window.innerWidth >= 1024) {
 		nav.classList.remove('navbar-toggle');
+		overLay.style.display = 'none';
 	}
 });
 
@@ -143,10 +150,17 @@ heroPlay.addEventListener('click', () => {
 menuCta.addEventListener('click', (e) => {
 	e.preventDefault();
 	nav.classList.toggle('navbar-toggle');
+	overLay.style.display = 'block';
 });
 
 exitCta.addEventListener('click', (e) => {
 	nav.classList.toggle('navbar-toggle');
+	overLay.style.display = 'none';
+});
+
+overLay.addEventListener('click', () => {
+	nav.classList.toggle('navbar-toggle');
+	overLay.style.display = 'none';
 });
 
 videoBtn.addEventListener('click', (e) => {
